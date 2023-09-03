@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+char checkArray(int n, int array[]) {
+    int evenSum = 0;
+    int oddSum = 0;
+
+    for (int i = 0; i < n; i++) {
+        if (array[i] % 2 == 0) {
+            evenSum += array[i];
+        } else {
+            oddSum += array[i];
+        }
+    }
+
+    if ((evenSum % 2 == 0 && oddSum % 2 == 0) || (evenSum % 2 == 1 && oddSum % 2 == 1)) {
+        return 'Y';
+    } else {
+        return 'N';
+    }
+}
+
+int main() {
+    int t;
+    scanf("%d", &t);
+
+    for (int i = 0; i < t; i++) {
+        int n;
+        scanf("%d", &n);
+        int array[n];
+
+        for (int j = 0; j < n; j++) {
+            scanf("%d", &array[j]);
+        }
+
+        char result = checkArray(n, array);
+        printf("%c\n", result);
+    }
+
+    return 0;
+}
