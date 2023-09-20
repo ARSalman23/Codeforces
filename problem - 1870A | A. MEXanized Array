@@ -1,0 +1,14 @@
+t = int(input())
+ 
+for i in range(t):
+    n, k, x = map(int, input().split())
+    if k == x:
+        x = x - 1
+    result = -1
+ 
+    if k > x + 1 or k > n:
+        result = -1
+    else:
+        result = (n - k) * x + (k * (k - 1)) // 2
+ 
+    print(result)
